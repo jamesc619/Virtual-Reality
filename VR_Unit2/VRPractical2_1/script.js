@@ -1,20 +1,31 @@
 let scene;
 
-function rnd(l, u){
-  return Math.floor(Math.random()*(u-l) + l);
+function randInt(x, y){
+  return Math.floor(Math.random()*(y-x) + x);
 }
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene"); //CSS Selector
 
   for(let i = 0; i < 100; i++){
-    let x = rnd(-20,20);
-    let z = rnd(-20,20);
-    createTree(x,0,z);
+    let x = randInt(-20,20);
+    let z = randInt(-20,20);
+    createTree(x,-0.5,z);
   }
-   //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
 
+   //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
+  for(let i = 0; i < 100; i++){
+    let x = randInt(-20,20);
+    let z = randInt(-20,20);
+    createCloud(x,10,z);
+  }
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
+   for(let i = 0; i < 5; i++){
+    let x = randInt(-20,20);
+    let z = randInt(-20,20);
+    createHouse(x,z);
+  }
+
 })
 
 /* Task 1: Create a function createCloud that,
@@ -25,7 +36,29 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set cloud entities position to those passed in to the function.
       6) Add the cloud entity to the scene
 */
+function createCloud(x,y,z){
+  let cloud = document.createElement("a-entity");
 
+  let puff = document.createElement("a-sphere");
+  puff.setAttribute("position","0 0 0");
+  cloud.append(puff);
+
+  let puff1 = document.createElement("a-sphere");
+  puff1.setAttribute("position","-1 0 0");
+  cloud.append(puff1);
+
+  let puff2 = document.createElement("a-sphere");
+  puff2.setAttribute("position","0 0 -1");
+  cloud.append(puff2);
+
+  let puff3 = document.createElement("a-sphere");
+  puff3.setAttribute("position","-1 0 -1");
+  cloud.append(puff3);
+  
+
+  cloud.setAttribute("position",{x:x, y:y, z:z})
+  scene.append(cloud);
+}
 /* Task 3: Create a function createHouse that,
       1) Accept an x and z position for where to place the house "entity"
       2) Create an entity to store all the components that will make up the house
@@ -35,6 +68,27 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set house entities position to those passed in to the function.
       6) Add the house entity to the scene
 */
+function createHouse(x, z){
+  let house = document.createElement("a-entity");
+  
+  let base = document.createElement("a-box");
+  base.setAttribute("color","yellow");
+  base.setAttribute("scale","1.5 1.5 1.5");
+  house.append(base);
+
+  let roof = document.createElement("a-cone");
+  roof.setAttribute("segments-radial","4");
+  roof.setAttribute("scale","1.5 1 1.5");
+  roof.setAttribute("position","0 1.25 0");
+  roof.setAttribute("rotation","0 45 0");
+  roof.setAttribute("color","#d8432f");
+  house.append(roof);
+
+  house.setAttribute("position", {x:x, y:0.5, z:z});
+  house.setAttribute("scale","2 2 2");
+  scene.append(house);
+}
+
 function createTree(x, y, z){
   let tree = document.createElement("a-entity");
   
