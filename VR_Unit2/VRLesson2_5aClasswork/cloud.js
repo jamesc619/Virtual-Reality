@@ -2,7 +2,6 @@ class Cloud{
   constructor(x,y,z){
     // Challenge 1: Create animation variables  x and dx for the Cloud to fly.  Set them to appropriate values.
     this.x = rnd(-15,15);
-    this.z = rnd(-15,15);
     this.dx = 0.01;
 
     this.obj = document.createElement("a-entity");
