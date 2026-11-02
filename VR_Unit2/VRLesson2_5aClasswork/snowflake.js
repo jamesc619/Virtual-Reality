@@ -7,7 +7,7 @@ class Snowflake{
     this.obj = document.createElement("a-sphere");
 
     this.obj.setAttribute("position",{x:x,y:y,z:z});
-    this.obj.setAttribute("radius","1");
+    this.obj.setAttribute("radius","0.1");
 
     scene.append(this.obj);
   }

@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded",function() {
   for(let i = 0; i < 5; i++){
     let x = rnd(-20,20);
     let z = rnd(-20,20);
-    let house = new House(x, 15 , z);
+    let house = new House(x, 0.5 , z);
   }
 
 })
