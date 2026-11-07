@@ -42,12 +42,12 @@ function loop(){
   }
 
   //Challenge 2: Traverse your array of clouds and make each cloud fly
-  for(let cloud of clouds){
-  cloud.fly();
+  for(let i=0;i<clouds.length;i++){
+  clouds[i].fly();
   }
   //Challenge 4: Traverse your array of snowflakes and make each snowflake fall
-  for(let snowflake of snowflakes){
-  snowflake.fall();
+  for(let i=0;i<snowflakes.length;i++){
+  snowflakes[i].fall();
   }
   window.requestAnimationFrame( loop );
 }
