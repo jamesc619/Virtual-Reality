@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded",function() {
     let x=rnd(-100,100);
     let y=rnd(100,200);
     let z=rnd(-100,100);
-    ufo = new Ufo(x,y,z);
+    let ufo = new Ufo(x,y,z);
     ufos.push(ufo);
   }
   
@@ -28,9 +28,9 @@ function loop(){
   }
   for(let ufo of ufos){
     ufo.invade();
-    // ufo.rotate(); ROTATES AS ONE ENTITY Mr Castro if you are reading this is there a fix
-  }
+    ufo.rotate(); 
 
+  }
 
   window.requestAnimationFrame( loop );
 }
