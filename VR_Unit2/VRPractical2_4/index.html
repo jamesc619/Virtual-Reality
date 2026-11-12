@@ -4,6 +4,7 @@
     <script src="script.js"></script>
     <script src="rocket.js"></script>
     <script src="ufo.js"></script>
+    <script src="car.js"></script>
   </head>
   <body>
       <a-scene>
@@ -8008,7 +8009,7 @@
         <a-sphere position="0 4 -4"radius="0.25"></a-sphere>
       </a-box>
 
-      <a-entity class="car" position="0 2.3 -5" scale="0.8 0.8 0.8">
+      <a-entity id="car" position="0 2.3 -5" scale="0.8 0.8 0.8">
           <a-box class="body" wireframe="true">
             <a-box position="0 -1.5 -3" rotation="0 0 0" width="4" depth="3" height= "2"color="#524D4D"></a-box>
             <a-cylinder position="0 -2 -3" height= "2.99" theta-length="106" color="#CBF1F7" side="double" radius="2.5" rotation="-37 90 90"></a-cylinder>
@@ -8053,7 +8054,7 @@
             <a-cylinder position="0 1 0" rotation="90 0 0" height="0.75" radius="0.25" color="gray"></a-cylinder>
           </a-box>
       </a-entity>
-      <a-entity class="car" position="15 2.3 -5" scale="0.8 0.8 0.8">
+      <a-entity id="car" position="15 2.3 -5" scale="0.8 0.8 0.8">
           <a-box class="body" wireframe="true">
             <a-box position="0 -1.5 -3" rotation="0 0 0" width="4" depth="3" height= "2"color="#524D4D"></a-box>
             <a-cylinder position="0 -2 -3" height= "2.99" theta-length="106" color="#CBF1F7" side="double" radius="2.5" rotation="-37 90 90"></a-cylinder>
@@ -8098,7 +8099,7 @@
             <a-cylinder position="0 1 0" rotation="90 0 0" height="0.75" radius="0.25" color="gray"></a-cylinder>
           </a-box>
       </a-entity>
-      <a-entity class="car" position="-15 2.3 -16" rotation="0 180 0"scale="0.8 0.8 0.8">
+      <a-entity id="car" position="-15 2.3 -16" rotation="0 180 0"scale="0.8 0.8 0.8">
           <a-box class="body" wireframe="true">
             <a-box position="0 -1.5 -3" rotation="0 0 0" width="4" depth="3" height= "2"color="#524D4D"></a-box>
             <a-cylinder position="0 -2 -3" height= "2.99" theta-length="106" color="#CBF1F7" side="double" radius="2.5" rotation="-37 90 90"></a-cylinder>
@@ -8148,7 +8149,7 @@
       <a-plane position="0 0 0" rotation="-90 0 0" width="200" height="200" color="black"></a-plane>
         <a-sky src="skyy.jpg" repeat="5 5"></a-sky>
       <!-- Camera is added so that you do not "spawn" at the origin -->
-      <a-camera position="0 7 4"></a-camera>
+      <a-camera position="0 7 -75"></a-camera>
     </a-scene>
   </body>
 </html>

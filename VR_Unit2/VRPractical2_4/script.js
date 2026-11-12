@@ -28,6 +28,9 @@ function loop(){
   }
   for(let ufo of ufos){
     ufo.invade();
+    // ufo.rotate(); ROTATES AS ONE ENTITY Mr Castro if you are reading this is there a fix
   }
+
+
   window.requestAnimationFrame( loop );
 }
