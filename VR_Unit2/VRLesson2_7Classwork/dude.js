@@ -18,11 +18,14 @@ class Dude{
     this.dy+=this.ddy;
     this.y+=this.dy;
     //Challenge 3: Add the decision in order to alternate the delta on the y axis when the dude reaches less then 1 or greater than 2
-    if(this.z<-15||this.z>15){
+    if(this.z<-50||this.z>50){
       this.dz*=-1;
     }
-    if(this.y<0.01){
+    if(this.y<0){
       this.dy*=-1;
+    }
+    if(this.y<-1){
+      this.y=10;
     }
     console.log(this.y);
     this.obj.setAttribute("position",{x:this.x,y:this.y,z:this.z});
