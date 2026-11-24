@@ -21,9 +21,9 @@ window.addEventListener("DOMContentLoaded",function() {
     let cols = row.split("");
     for(let c = 0; c < cols.length; c++){
       if(cols[c] == "x"){
-        new Block(c,1,r)
+        new Block(c,1,r);
       }
-      else if(cols[c] == "T"){
+else if(cols[c] == "T"){
         new Tree(c,1,r);
       }else if(cols[c]=="o"){
         new Rock(c,1,r)
@@ -31,5 +31,7 @@ window.addEventListener("DOMContentLoaded",function() {
     }
 
   }
+
+
 
 })
